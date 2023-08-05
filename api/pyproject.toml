@@ -17,6 +17,8 @@ black = {extras = ["d"], version = "^23.3.0"}
 mypy = "1.4.1"
 django-stubs = "4.2.3"
 django-stubs-ext = "4.2.2"
+psycopg = "3.1.10"
+dj-database-url = "2.0.0"
 
 
 [build-system]
