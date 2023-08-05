@@ -1,0 +1,8 @@
+# editor
+.idea
+
+# python
+**/*.pyc
+
+# django
+db.sqlite3
