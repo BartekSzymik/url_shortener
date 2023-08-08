@@ -9,3 +9,7 @@ omit =
     */wsgi.py
     */settings.py
     */urls.py
+    */install-poetry.py
+    */manage.py
+    */conftest.py
+    */shortener/tests.py
