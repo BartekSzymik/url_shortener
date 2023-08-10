@@ -83,10 +83,6 @@ DATABASES = {
     }
 }
 
-DB_CONNECTION_STRING = os.environ.get("DB_CONNECTION_STRING")
-
-DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -127,7 +123,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.CustomUser"
-
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
