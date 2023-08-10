@@ -137,7 +137,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "obscure-reef-5580.herokuapp.com",
-    "https://obscure-reef-5580.herokuapp.com/",
+    "https://obscure-reef-5580-1aae042f012c.herokuapp.com/",
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
 
