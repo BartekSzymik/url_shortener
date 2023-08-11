@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from . import models, serializers
 from .models import URL
 from .serializers import URLSerializer
-
+from typing import Any
 
 class CreateShortURLApiView(generics.CreateAPIView):
     queryset = models.URL.objects.all()
@@ -22,8 +22,8 @@ class CreateShortURLApiView(generics.CreateAPIView):
         return Response(data=short_url.data, status=status.HTTP_201_CREATED)
 
 
-class ShortUrlRedirectView(RedirectView):
-    def get_redirect_url(self, *args, short_url, **kwargs):
-        url = get_object_or_404(URL, short_url=short_url)
+def get_redirect_url(self, *args: Any, short_url: str,
+                     **kwargs: Any) -> str | None:
+    url = get_object_or_404(models.URL, short_url=short_url)
 
-        return url.original_url
+    return url.url
