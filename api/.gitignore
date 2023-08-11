@@ -1,8 +1,10 @@
 # editor
 .idea
+.DS_Store
 
 # python
 **/*.pyc
+venv
 
 # django
 db.sqlite3
