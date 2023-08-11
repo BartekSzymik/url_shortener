@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "secret"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Application definition
 
@@ -135,10 +135,7 @@ REST_FRAMEWORK = {
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
     "obscure-reef-55802.herokuapp.com",
-    "obscure-reef-55802-1aae042f012c.herokuapp.com",
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
 
