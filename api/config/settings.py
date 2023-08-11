@@ -135,6 +135,7 @@ REST_FRAMEWORK = {
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
+    "localhost",
     "obscure-reef-55802.herokuapp.com",
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
