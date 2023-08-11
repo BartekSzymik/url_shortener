@@ -53,6 +53,9 @@ Go to your client:
 ```bash
   http://0.0.0.0.8000/api/schema/swagger-ui/
 ```
+
+Use Postman with predefined collections:
+- load postman collections from `./api/postman_collections/*.postman_collection.json`
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your ./envs/api.env file

@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "65338b34-aae6-4f7a-b89e-f0c96980b734",
+		"name": "URL Shortener local",
+		"description": "A Django URL shortener app is a web application that allows users to create short, customized links that redirect to longer URLs. The app typically has a simple user interface that accepts a long URL as input and generates a short URL that can be shared with others. When a user clicks on the short link, they are redirected to the original long URL.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25753134"
+	},
+	"item": [
+		{
+			"name": "/api/v1/urls/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://ztp.krakow.pl/transport-publiczny/komunikacja-miejska/przewodnik-po-biletach-kmk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/v1/urls/",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"urls",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
