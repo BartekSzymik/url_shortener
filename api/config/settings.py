@@ -18,7 +18,6 @@ from config.swagger_settings import SPECTACULAR_SETTINGS
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -29,7 +28,6 @@ SECRET_KEY = os.environ.get("DJ_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("DJ_ALLOWED_HOSTS", "").split()
-
 
 # Application definition
 
@@ -76,14 +74,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DB_CONNECTION_STRING = os.environ.get("DB_CONNECTION_STRING")
 
 DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -103,7 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -114,7 +109,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -142,4 +136,14 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 INTERNAL_IPS = ALLOWED_HOSTS
 
-CSRF_TRUSTED_ORIGINS = ("https://obscure-reef-55802-1aae042f012c.herokuapp.com",)
+CSRF_TRUSTED_ORIGINS = os.environ.get("DJ_CSRF_TRUSTED_ORIGINS", "").split()
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.environ.get("REDIS_CONNECTION_STRING"),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}
